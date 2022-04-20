@@ -9,9 +9,15 @@ pipeline {
           }
         }
 
-        stage('error') {
+        stage('errora') {
           steps {
             bat 'mvn clean test'
+          }
+        }
+
+        stage('a') {
+          steps {
+            sh 'mvn --vesrion'
           }
         }
 
