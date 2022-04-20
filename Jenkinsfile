@@ -2,9 +2,19 @@ pipeline {
   agent any
   stages {
     stage('error') {
-      steps {
-        sh 'mvn compile test package'
-        bat 'mvn clean test'
+      parallel {
+        stage('version') {
+          steps {
+            sh 'mvn --version'
+          }
+        }
+
+        stage('') {
+          steps {
+            sh 'mvn clean test'
+          }
+        }
+
       }
     }
 
