@@ -3,21 +3,15 @@ pipeline {
   stages {
     stage('error') {
       parallel {
-        stage('version') {
+        stage('Version Check') {
           steps {
             bat 'mvn --version'
           }
         }
 
-        stage('errora') {
+        stage('Run Project') {
           steps {
             bat 'mvn clean test'
-          }
-        }
-
-        stage('a') {
-          steps {
-            sh 'mvn --vesrion'
           }
         }
 
