@@ -11,7 +11,7 @@ pipeline {
 
         stage('error') {
           steps {
-            sh 'mvn clean test'
+            bat 'mvn clean test'
           }
         }
 
